@@ -1,0 +1,61 @@
+{
+  "name": "base64fileencoderdecoder",
+  "version": "1.0.0",
+  "description": "Convert files to shareable Base64 text and restore them on your desktop.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack:win": "electron-builder --win --x64 --dir",
+    "dist:win": "electron-builder --win nsis --x64 --publish never",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.base64fileencoderdecoder.app",
+    "productName": "Base64 File Converter",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "package.json",
+      "index.js",
+      "preload.js",
+      "base64.js",
+      "renderer.js",
+      "theme.js",
+      "file-to-text.js",
+      "text-to-file.js",
+      "index.html",
+      "file-to-text.html",
+      "text-to-file.html",
+      "styles.css"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "Base64-File-Converter-Setup-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^44.4.5",
+    "electron-builder": "26.15.3"
+  }
+}

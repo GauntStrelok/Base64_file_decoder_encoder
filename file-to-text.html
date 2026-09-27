@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="file-to-text.js" defer></script>
+    <title>Convert file to text</title>
+  </head>
+  <body>
+    <main class="converter">
+      <div class="theme-controls"><button type="button" id="theme-toggle">Switch to dark theme</button></div>
+      <a class="back-link" href="index.html">Back to home</a>
+      <h1>Convert file to text</h1>
+      <p>Select a file to convert it to Base64 text.</p>
+      <form id="file-form">
+        <label for="file-input">Choose a file</label>
+        <input type="file" id="file-input" required />
+        <button type="submit" id="convert" hidden disabled>Convert</button>
+        <p id="conversion-status" role="status"></p>
+        <div id="conversion-result" hidden>
+          <div class="result-heading">
+            <label for="base64-output">File text (filename and Base64)</label>
+            <button type="button" id="copy-text">Copy text</button>
+          </div>
+          <textarea id="base64-output" rows="8" readonly spellcheck="false"></textarea>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

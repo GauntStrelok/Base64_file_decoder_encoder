@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="renderer.js" defer></script>
+    <title>Base64 File Converter</title>
+  </head>
+  <body>
+    <main class="converter">
+      <div class="theme-controls"><button type="button" id="theme-toggle">Switch to dark theme</button></div>
+      <h1>Base64 File Converter</h1>
+      <p>Convert files to Base64 text and back again.</p>
+      <div class="actions" aria-label="Conversion options">
+        <button type="button" id="file-to-text">Convert file to text</button>
+        <button type="button" id="text-to-file">Convert text to file</button>
+      </div>
+    </main>
+  </body>
+</html>

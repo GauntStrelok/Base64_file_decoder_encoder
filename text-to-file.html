@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="text-to-file.js" defer></script>
+    <title>Convert text to file</title>
+  </head>
+  <body>
+    <main class="converter">
+      <div class="theme-controls"><button type="button" id="theme-toggle">Switch to dark theme</button></div>
+      <a class="back-link" href="index.html">Back to home</a>
+      <h1>Convert text to file</h1>
+      <p>Paste the generated text, then choose where to save your file.</p>
+      <form id="text-form">
+        <label for="base64-input">File text</label>
+        <textarea id="base64-input" rows="8" required spellcheck="false" aria-describedby="save-help"></textarea>
+        <p id="save-help">Include the Filename line to restore the original filename. Plain Base64 also works; enter a filename and extension when saving.</p>
+        <button type="submit" id="save-file" disabled>Save file</button>
+        <p id="conversion-status" role="status"></p>
+      </form>
+    </main>
+  </body>
+</html>
